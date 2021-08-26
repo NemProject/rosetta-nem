@@ -1,8 +1,8 @@
 FROM ubuntu:20.04
 
 RUN apt-get update \
-	&& apt-get -y install openjdk-8-jdk-headless curl \
-	&& rm -rf /var/lib/apt/lists/*
+  && apt-get -y install openjdk-8-jdk-headless curl \
+  && rm -rf /var/lib/apt/lists/*
 
 RUN curl -L http://bob.nem.ninja/nis-0.6.97.tgz -o nis-0.6.97.tgz \
   && tar -xzf nis-0.6.97.tgz \
