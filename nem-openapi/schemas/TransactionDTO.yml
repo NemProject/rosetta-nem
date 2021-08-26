@@ -1,0 +1,33 @@
+## COMPLETE THE TRANSACTION OBJECTS, most likely it would be a "one of"
+type: object
+required:
+    - timeStamp
+    - signature
+    - fee
+    - deadline
+    - type
+    - signer
+    - version
+properties:
+    timeStamp:
+        $ref: "./Timestamp.yml"
+    mode:
+        type: integer
+    signature:
+        $ref: "./Signature.yml"
+    fee:
+        type: integer
+    deadline:
+        type: integer
+    type:
+        type: integer
+    remoteAccount:
+        type: string
+    signer:
+        type: string
+    version:
+        type: integer
+    recipient:
+        type: string
+    message:
+        $ref: './MessageDTO.yml'

@@ -1,0 +1,100 @@
+'/chain/height':
+    get:
+        tags:
+            - Chain
+        summary: Chain Height
+        description: Gets the current height of the block chain.
+        operationId: chainHeight
+        responses:
+            '200':
+                description: success
+                content:
+                    application/json:
+                        schema:
+                            $ref: './schemas/ChainHeightDTO.yml'
+'/chain/score':
+    get:
+        tags:
+            - Chain
+        summary: Chain Score
+        description: Gets the current scroe of the block chain.
+        operationId: chainSocre
+        responses:
+            '200':
+                description: success
+                content:
+                    application/json:
+                        schema:
+                            $ref: './schemas/ChainScoreDTO.yml'
+'/chain/last-block':
+    get:
+        tags:
+            - Chain
+        summary: Chain Last Block
+        description: Gets the current last block of the chain.
+        operationId: chainLastBlock
+        responses:
+            '200':
+                description: success
+                content:
+                    application/json:
+                        schema:
+                            $ref: './schemas/BlockDTO.yml'
+'/block/at/public':
+    post:
+        tags:
+            - Block
+        summary: Block at given hight Score
+        description: Gets a block from the chain that has the given height.
+        operationId: blockAtPublic
+        requestBody:
+            $ref: './request_bodies/BlockAtPublicRequestBody.yml'
+        responses:
+            '200':
+                description: success
+                content:
+                    application/json:
+                        schema:
+                            $ref: './schemas/BlockDTO.yml'
+'/node/peer-list/reachable':
+    get:
+        tags:
+            - Node
+        summary: Gets an array all reachable nodes.
+        description: Gets an array of all nodes with status 'active' in the neighborhood.
+        operationId: nodePeerListReachable
+        responses:
+            '200':
+                description: success
+                content:
+                    application/json:
+                        schema:
+                            $ref: './schemas/NodeListDTO.yml'
+'/node/peer-list/active':
+    get:
+        tags:
+            - Node
+        summary: Gets an array with all the active nodes.
+        description: Gets an array of active nodes in the neighborhood that are selected for broadcasts.
+        operationId: nodePeerListActive
+        responses:
+            '200':
+                description: success
+                content:
+                    application/json:
+                        schema:
+                            $ref: './schemas/NodeListDTO.yml'
+'/node/peer-list/all':
+    get:
+        tags:
+            - Node
+        summary: Gets all the peer nodes.
+        description: Gets an array of all known nodes in the neighborhood.
+        operationId: nodePeerListAll
+        responses:
+            '200':
+                description: success
+                content:
+                    application/json:
+                        schema:
+                            $ref: './schemas/AllNodesDTO.yml'

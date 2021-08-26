@@ -1,0 +1,2 @@
+BlockAtPublicRequestBody:
+    '$ref': './BlockAtPublicRequestBody.yml'

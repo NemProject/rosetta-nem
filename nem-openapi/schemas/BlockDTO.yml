@@ -1,0 +1,33 @@
+type: object
+required:
+    - timeStamp
+    - signature
+    - prevBlockHash
+    - type
+    - transactions
+    - version
+    - signer
+    - height
+properties:
+    timeStamp:
+        $ref: "./Timestamp.yml"
+    signature:
+        $ref: "./Signature.yml"
+    prevBlockHash:
+        type: object
+        required:
+            - data
+        properties:
+            data:
+                type: string
+    type:
+        type: integer
+    transactions:
+        type: array
+        description: List of transacitons of this block
+        items:
+            $ref: './TransactionDTO.yml'
+    signer:
+        type: string
+    height:
+        type: integer

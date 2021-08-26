@@ -1,0 +1,23 @@
+type: object
+required:
+    - inactive
+    - failure
+    - busy
+    - active
+properties:
+    inactive:
+        type: array
+        items:
+            $ref: './NodeDTO.yml'
+    failure:
+        type: array
+        items:
+            $ref: './NodeDTO.yml'
+    busy:
+        type: array
+        items:
+            $ref: './NodeDTO.yml'
+    active:
+        type: array
+        items:
+            $ref: './NodeDTO.yml'

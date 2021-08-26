@@ -1,0 +1,3 @@
+type: string
+description: The transaction signature. The transaction signature is validated using the supplied public key in the field signer. If the signature is not valid, an error is returned from validation.
+example: fdf6a9830e9320af79123f467fcb03d6beab735575ff50eab363d812c55814362ad7be0503db2ee70e60ac3408d83cdbcbd941067a6df703e0c21c7bf389f105

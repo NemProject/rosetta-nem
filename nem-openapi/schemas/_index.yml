@@ -1,0 +1,25 @@
+# Generic types
+AllNodesDTO:
+    '$ref': './AllNodesDTO.yml'
+BlockAtPublicRequestDTO:
+    '$ref': './BlockAtPublicRequestDTO.yml'
+BlockDTO:
+    '$ref': './BlockDTO.yml'
+ChainHeightDTO:
+    '$ref': './ChainHeightDTO.yml'
+ChainScoreDTO:
+    '$ref': './ChainScoreDTO.yml'
+ModelErrorDTO:
+    '$ref': './ModelErrorDTO.yml'
+TransactionDTO:
+    '$ref': './TransactionDTO.yml'
+NodeDTO:
+    '$ref': './NodeDTO.yml'
+NodeListDTO:
+    '$ref': './NodeListDTO.yml'
+MessageDTO:
+    '$ref': './MessageDTO.yml'
+Signature:
+    '$ref': './Signature.yml'
+Timestamp:
+    '$ref': './Timestamp.yml'

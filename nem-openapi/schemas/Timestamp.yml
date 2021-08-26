@@ -1,0 +1,3 @@
+type: integer
+description: The number of seconds elapsed since the creation of the nemesis block. Future timestamps are not allowed. Transaction validation detects future timestamps and returns an error in that case. Network time synchronization ensures that any NEM software component will use valid timestamps when creating transactions.
+example: 73397

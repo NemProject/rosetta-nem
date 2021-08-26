@@ -1,0 +1,47 @@
+type: object
+required:
+    - metaData
+    - endpoint
+    - identity
+properties:
+    metaData:
+        type: object
+        required:
+            - features
+            - networkId
+            - version
+            - platform
+        properties:
+            features:
+                type: integer
+            application:
+                type: string
+            networkId:
+                type: integer
+            version:
+                type: string
+            platform:
+                type: string
+    endpoint:
+        type: object
+        required:
+            - protocol
+            - port
+            - host
+        properties:
+            protocol:
+                type: string
+            port:
+                type: integer
+            host:
+                type: string
+    identity:
+        type: object
+        required:
+            - name
+            - public-key
+        properties:
+            name:
+                type: string
+            'public-key':
+                type: string

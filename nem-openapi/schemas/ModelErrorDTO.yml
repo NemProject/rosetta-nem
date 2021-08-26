@@ -1,0 +1,14 @@
+type: object
+required:
+    - timeStamp
+    - error
+    - status
+properties:
+    timeStamp:
+        $ref: "./Timestamp.yml"
+    error:
+        type: string
+    message:
+        type: string
+    status:
+        type: integer

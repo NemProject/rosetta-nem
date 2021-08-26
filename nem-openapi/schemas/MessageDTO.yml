@@ -1,0 +1,9 @@
+type: object
+required:
+    - payload
+    - type
+properties:
+    payload:
+        type: string
+    type:
+        type: integer
