@@ -1,0 +1,15 @@
+create_account(1){
+  create{
+    network = {"blockchain":"NEM", "network":"testnet"};
+    key = generate_key({"curve_type": "ed25519-keccak"});
+    account = derive({
+      "network_identifier": {{network}},
+      "public_key": {{key.public_key}}
+    });
+
+    save_account({
+      "account_identifier": {{account.account_identifier}},
+      "keypair": {{key}}
+    });
+  }
+}
