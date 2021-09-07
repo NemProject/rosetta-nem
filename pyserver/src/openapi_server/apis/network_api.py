@@ -110,8 +110,8 @@ async def network_status(
         return Error(code=1, message='invalid network', retriable=True)
 
     current_block_identifier=BlockIdentifier(
-        index = 1,
-        hash = '1234567890abcdef'
+        index = 10,
+        hash = '90abcdef12345678'
     )
     genesis_block_identifier=BlockIdentifier(
         index = 1,
@@ -124,8 +124,8 @@ async def network_status(
         genesis_block_identifier=genesis_block_identifier,
         #oldest_block_identifier=
         sync_status=SyncStatus(
-                current_index=1,
-                target_index=0,
+                current_index=30,
+                target_index=30,
                 synced=True
         ),
         peers=[

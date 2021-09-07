@@ -23,6 +23,9 @@ from openapi_server.models.block_transaction_request import BlockTransactionRequ
 from openapi_server.models.block_transaction_response import BlockTransactionResponse
 from openapi_server.models.error import Error
 
+from openapi_server.models.block import Block
+from openapi_server.models.block_identifier import BlockIdentifier
+from openapi_server.models.network_identifier import NetworkIdentifier
 
 router = APIRouter()
 
@@ -40,7 +43,20 @@ async def block(
     block_request: BlockRequest = Body(None, description=""),
 ) -> BlockResponse:
     """Get a block by its Block Identifier. If transactions are returned in the same call to the node as fetching the block, the response should include these transactions in the Block object. If not, an array of Transaction Identifiers should be returned so /block/transaction fetches can be done to get all transaction information.  When requesting a block by the hash component of the BlockIdentifier, this request MUST be idempotent: repeated invocations for the same hash-identified block must return the exact same block contents.  No such restriction is imposed when requesting a block by height, given that a chain reorg event might cause the specific block at height &#x60;n&#x60; to be set to a different one. """
-    ...
+    if block_request.network_identifier != NetworkIdentifier(blockchain='NEM', network='mainnet'):
+        return Error(code=1, message='invalid network', retriable=True)
+
+    if block_request.block_identifier.index != 10:
+        return Error(code=1, message='unexpected index', retriable=True)
+
+    return BlockResponse(
+        block=Block(
+            block_identifier=BlockIdentifier(index = 10, hash = '90abcdef12345678'),
+            parent_block_identifier=BlockIdentifier(index = 9, hash = '890abcdef1234567'),
+            timestamp = 1615853185000 + 1000,
+            transactions = []
+        )
+    )
 
 
 @router.post(
