@@ -1,0 +1,16 @@
+{
+  "_info": "this file contains a list of all trusted peers and can be shared",
+  "knownPeers": [
+	{
+      "endpoint": {
+        "host": "127.0.0.1",
+        "port": 7890,
+        "protocol": "http"
+      },
+      "identity": {
+        "name": "rosetta testnet node",
+        "public-key": "00666f324934401d5bc91c150b38ebef5a6933a494892bca35e933d2fb568207"
+      }
+    }
+  ]
+}
